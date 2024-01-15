@@ -23,7 +23,7 @@ public class Main {
         Product productList = new Product();
 
 
-        System.out.println("Hello world!");
+        //  System.out.println("Hello world!");
 
 
         while (true) {
@@ -41,42 +41,31 @@ public class Main {
                 members = 0; //обязательная инициализация для компилятора
 
 
-                String tmp = scanner.nextLine(); // scanner.nextInt() нельзя выдаст ошибку, т.к. введён не int
+                String tmp = scanner.nextLine(); // сброс неверного значения, scanner.nextInt() нельзя выдаст ошибку, т.к. введён не int
 
                 System.out.println("Вы ввели не целое число");
 
             }
 
 
-            switch (members) {
-
-                case 0:
-
-                    System.out.println("Не корректное значение");
-
-                    break;
-
-                case 1:
-
-                    System.out.println("Нет смысла ничего считать и делить.");
-
-                    break;
-
-            }
-
-
-            if (members < 0) {
+            if (members <= 0) {
 
                 System.out.println("Не корректное значение");
 
             }
+            else if (members == 1)
+            {
+                System.out.println("Нет смысла ничего считать и делить.");
+
+            }
 
 
-            if (members > 1) {
+
+           if (members > 1) {
 
                 System.out.println("Пришло " + members + " человека.");
 
-                break;
+               break;
 
             }
 
@@ -112,7 +101,9 @@ public class Main {
 
                     System.out.println("Цена должна быть положительной!");
 
-                    break;
+                    productList.price = 0; //обязательная инициализация для компилятор
+
+                    // break;
 
                 }
 
@@ -122,51 +113,53 @@ public class Main {
                 productList.price = 0; //обязательная инициализация для компилятора
 
 
-                String tmp = scanner.nextLine(); // scanner.nextInt() нельзя выдаст ошибку, т.к. введён не int
+                String tmp = scanner.next(); // scanner.nextInt() нельзя выдаст ошибку, т.к. введён не int
 
                 System.out.println("Вы ввели не целое число");
 
+//                break;
             }
 
+            if (productList.price != 0) {
 
-            productList.listName += input;
+                productList.listName += input;
 
-            productList.listName = productList.listName + "=" + String.format("%.2f", productList.price) + "р.\n";
+                productList.listName = productList.listName + "=" + String.format("%.2f", productList.price) + "р.\n";
 
 
-            productList.amountPrice += productList.price;
+                productList.amountPrice += productList.price;
 
 
 //System.out.println("Сумма товаров= " + productList.amountPrice);
 
 
-            System.out.println("Завершить ввод?");
+                System.out.println("Завершить ввод?");
 
-            System.out.print("да/нет или 'завершить': ");
+                System.out.print("да/нет или 'завершить': ");
 
 
 // input = scanner.next();
 
 
-            if ((scanner.nextLine().isEmpty())) {
+                if ((scanner.nextLine().isEmpty())) {
 
-                input = scanner.nextLine();
+                    input = scanner.nextLine();
 
-                System.out.println("продолжаем..."); //реакция на ввод пустой строки
-
-
-            } else input = scanner.next();
+                    System.out.println("продолжаем..."); //реакция на ввод пустой строки
 
 
-            System.out.println("input= " + input);
+                } else input = scanner.next();
 
 
-            if (input.equalsIgnoreCase("да") || input.equalsIgnoreCase("завершить")) {
+                System.out.println("input= " + input);
 
-                break;
 
+                if (input.equalsIgnoreCase("да") || input.equalsIgnoreCase("завершить")) {
+
+                    break;
+
+                }
             }
-
 
         }
 
