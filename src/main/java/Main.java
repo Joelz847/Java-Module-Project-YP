@@ -4,14 +4,10 @@
 import java.util.Scanner;
 
 
-
 public class Main {
 
 
     public static void main(String[] args) {
-
-
-        //-----------------------
 
 
         int members;
@@ -21,9 +17,6 @@ public class Main {
 
 
         Product productList = new Product();
-
-
-        //  System.out.println("Hello world!");
 
 
         while (true) {
@@ -52,20 +45,17 @@ public class Main {
 
                 System.out.println("Не корректное значение");
 
-            }
-            else if (members == 1)
-            {
+            } else if (members == 1) {
                 System.out.println("Нет смысла ничего считать и делить.");
 
             }
 
 
-
-           if (members > 1) {
+            if (members > 1) {
 
                 System.out.println("Пришло " + members + " человека.");
 
-               break;
+                break;
 
             }
 
@@ -103,7 +93,6 @@ public class Main {
 
                     productList.price = 0; //обязательная инициализация для компилятор
 
-                    // break;
 
                 }
 
@@ -117,7 +106,7 @@ public class Main {
 
                 System.out.println("Вы ввели не целое число");
 
-//                break;
+
             }
 
             if (productList.price != 0) {
@@ -130,15 +119,9 @@ public class Main {
                 productList.amountPrice += productList.price;
 
 
-//System.out.println("Сумма товаров= " + productList.amountPrice);
-
-
                 System.out.println("Завершить ввод?");
 
                 System.out.print("да/нет или 'завершить': ");
-
-
-// input = scanner.next();
 
 
                 if ((scanner.nextLine().isEmpty())) {
