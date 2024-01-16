@@ -1,6 +1,7 @@
 
 
 
+
 import java.util.Scanner;
 
 
@@ -79,35 +80,32 @@ public class Main {
             var input = scanner.next();
 
 
-            System.out.print("Сколько стоит товар: ");
+            while (true)
+            {
+                System.out.print("Сколько стоит товар: ");
+                String zxc = scanner.next();
+                try {
+                    productList.price = Double.parseDouble(zxc);
+                    if (productList.price <= 0) {
 
-
-            if (scanner.hasNextInt()) {
-
-                productList.price = scanner.nextFloat();
-
-
-                if (productList.price <= 0) {
-
-                    System.out.println("Цена должна быть положительной!");
-
-                    productList.price = 0; //обязательная инициализация для компилятор
-
-
+                        System.out.println("Цена должна быть положительной!");
+                        continue;
+                    }
+                    break;
+                } catch (NumberFormatException e)
+                {
+                    System.out.print("Введено неверное значение ");
+                    continue;
                 }
-
-
-            } else {
-
-                productList.price = 0; //обязательная инициализация для компилятора
-
-
-                String tmp = scanner.next(); // scanner.nextInt() нельзя выдаст ошибку, т.к. введён не int
-
-                System.out.println("Вы ввели не целое число");
-
-
             }
+
+
+
+
+
+
+
+
 
             if (productList.price != 0) {
 

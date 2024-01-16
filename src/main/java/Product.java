@@ -6,12 +6,12 @@ public class Product
 
     String listName = "";
 
-    float price;
+    double price;
 
-    float amountPrice;
+    double amountPrice;
 
 
-    public static String formRubl(float summ) {
+    public static String formRubl(double summ) {
 
         String rub = String.format("%.2f", summ) + " рубл"; //число с дробью .00 + рубл
 
